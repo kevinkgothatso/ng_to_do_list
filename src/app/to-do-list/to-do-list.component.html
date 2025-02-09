@@ -5,7 +5,12 @@
   <div class="todo-input">
       <form [formGroup]="todoForm" (ngSubmit)="AddToDoLIstItem()">
           <input type="text" placeholder="Enter a task..." formControlName="Task" required />
-          <input type="text" placeholder="Enter an action..." formControlName="Status" required />
+          <select name="status" id="statusDropdown" formControlName="Status" required >
+            <option value="" disabled selected>Select a task</option>
+            <option value="completed">Completed</option>
+            <option value="todo">To-Do</option>
+            <option value="inprogress">In-Progress</option>
+          </select>
           <button type="submit" class="btn-submit form-control">Add Task</button>
         </form>
   </div>
